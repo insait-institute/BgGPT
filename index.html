@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>BgGPT</title>
+    <link rel="icon" type="image/png" href="/assets/img/icon.144.png">
+    <link rel="canonical" href="https://bggpt.ai/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+      function handleLanguageChange(cb) {
+        if (cb.checked) {
+          document.body.classList.remove('lang-bg');
+          document.body.classList.add('lang-en');
+          localStorage.setItem('lang', 'en');
+        }
+        else {
+          document.body.classList.remove('lang-en');
+          document.body.classList.add('lang-bg');
+          localStorage.setItem('lang', 'bg');
+        }
+      }
+      function handleThemeChange() {
+        document.body.classList.toggle('dark')
+        if ($('body').hasClass('dark')) {
+          localStorage.setItem('color', 'dark');
+        }
+        else {
+          localStorage.setItem('color', 'light');
+        }
+      }
+      $(document).ready(function () {
+        console.log(localStorage.getItem('lang'))
+        if (localStorage.getItem('lang') === "en"){
+          document.body.classList.remove('lang-bg');
+          document.body.classList.add('lang-en');
+          $('.lang-switch input.check-toggle-round-flat').prop( "checked", true );
+        }
+        else {
+          document.body.classList.remove('lang-en');
+          document.body.classList.add('lang-bg');
+          $('.lang-switch input.check-toggle-round-flat').prop( "checked", false );
+        }
+        if (localStorage.getItem('color') === "dark"){
+          document.body.classList.add('dark');
+        }
+        else {
+          document.body.classList.remove('dark');
+        }
+      });
+    </script>
+
+    <meta name="description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta name="keywords" content="Bulgaria, LLM, BGGPT, BgGPT, AI, Chatbot, Open-source">
+    <meta property="og:title" content="BgGPT" />
+    <meta property="og:description" content="Тhe first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta property="og:image" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta property="og:url" content="https://bggpt.ai/"/>
+    <meta property="og:type" content="website" />
+    <meta name="twitter:description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta name="twitter:image" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:image:src" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BgGPT" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="nav-bar-stipe"></div>
+      <div class="container">
+        <a class="navbar-brand navbar-text" href="/">
+          <img src="/assets/img/logo_white2.svg" class="d-inline-block align-top light-only" alt="Logo of the website">
+          <img src="/assets/img/logo_black2.svg" class="d-inline-block align-top dark-only" alt="Logo of the website">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse offset-sm-6 offset-lg-0" id="navbarNav">
+          <ul class="navbar-nav bg-custom ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://insait.ai/" lang="bg">За INSAIT</a>
+              <a class="nav-link" href="https://insait.ai/" lang="en">About INSAIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm" lang="en">Blog</a>
+              <a class="nav-link" href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm" lang="bg">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://huggingface.co/INSAIT-Institute" lang="en">INSAIT models</a>
+              <a class="nav-link" href="https://huggingface.co/INSAIT-Institute" lang="bg">Модели на INSAIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:bggpt@insait.ai" lang="en">Contact us</a>
+              <a class="nav-link" href="mailto:bggpt@insait.ai" lang="bg">Свържи се с нас</a>
+            </li>
+            <li class="nav-item toggle">
+              <button class="light-switch" onclick="handleThemeChange();">
+                <span class="on"><img src="/assets/img/sun.svg" width="20" height="20" alt="Icon for brightness"></span>
+                <span class="off"><img src="/assets/img/moon.svg" width="20" height="20" alt="Icon for brightness"></span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <div class="lang-switch">
+                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                  onclick="handleLanguageChange(this)">
+                <label for="language-toggle"></label>
+                <span class="on">БГ</span>
+                <span class="off">EN</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="signup">
+      <div class="row text-center">
+        <div class="side-by-side">
+          <div class="demo">
+              <iframe width='650' height='382' frameborder="0" style="position: relative; width: 100%; aspect-ratio: 16 / 9; height: 100%;" allowfullscreen
+                    src="https://www.youtube-nocookie.com/embed/cYKOBb2-u4k?&controls=0&fs=1&iv_load_policy=3&loop=1&playsinline=1&rel=0">
+              </iframe>
+          </div>
+          <div class="description">
+            <p lang="en" class="rparagraph">
+              INSAIT is developing BgGPT, a series of state-of-the-art generative AI for the Bulgarian language, created for the Bulgarian users, institutions, public, and private organizations.
+              As part of BgGPT, we will release a series of free and open language models.
+            </p>
+            <p lang="bg" class="rparagraph">
+              INSAIT разработва BgGPT, първият специализиран български езиков модел, създаден за българските потребители, институции и бизнес.
+              Като част от BgGPT, INSAIT ще публикува поредица безплатни и свободни езикови модели.
+            </p>
+            <p lang="en">
+              <strong>Sign up <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnnYT9sthjm8KPIiXFzNhj-Hvb_q2g4anRlKnPIJgAh8dgNQ/viewform?usp=sf_link">here</a> to get early access to BgGPT chat.</strong>
+            </p>
+            <p lang="bg">
+              <strong>Запишете се <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnnYT9sthjm8KPIiXFzNhj-Hvb_q2g4anRlKnPIJgAh8dgNQ/viewform?usp=sf_link">тук</a> за ранен достъп до BgGPT chat.</a></strong>
+            </p>
+            <p lang="en">
+              <strong>Download the first BgGPT model:</strong> <a href="https://huggingface.co/INSAIT-Institute/BgGPT-7B-Instruct-v0.1" style="white-space: nowrap">BgGPT-7B-Instruct-v0.1</a>
+              <br/>
+              See our <a href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/">blog</a> for more information.
+            </p>
+            <p lang="bg">
+              <strong>Изтеглете първия BgGPT модел:</strong> <a href="https://huggingface.co/INSAIT-Institute/BgGPT-7B-Instruct-v0.1" style="white-space: nowrap">INSAIT-Institute/BgGPT-7B-Instruct-v0.1</a>
+              <br/>
+              Вижте нашия <a href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/">блог</a> за повече информация.
+            </p>
+            <p lang="en">
+              <b>Coming in March '24:</b> Free access to BgGPT chat!</i>
+            </p>
+            <p lang="bg">
+              <b>Очаквайте през март '24:</b> Свободен достъп до BgGPT chat!</i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row margin-top">
+      <div class="offset-sm-2 col-sm-8 offset-lg-2 col-lg-4 contact-col p-5 p-sm-0" style="text-align:center" id="contact">
+        <h2>BgGPT-7B-Instruct-v0.1</h2>
+        <p lang="en">Outperforms LLaMA-7b and Mistral-7B on Bulgarian</p>
+        <p lang="bg">По-добър от LLaMA-7b and Mistral-7B на български</p>
+        <p lang="en">See our <a href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/">blog</a> for more information.</p>
+        <p lang="bg">Вижте нашия <a href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/">блог</a> за повече информация.</p>
+        <a href="https://huggingface.co/INSAIT-Institute/BgGPT-7B-Instruct-v0.1">
+          <button class="btn btn-primary btn-rounded btn-lg m-4 p-3" lang="bg">Изтеглете</button>
+          <button class="btn btn-primary btn-rounded btn-lg m-4 p-3" lang="en">Download</button>
+        </a>
+      </div>
+      <div class="offset-sm-2 col-sm-8 offset-lg-0 col-lg-4 contact-col p-5 p-sm-0" style="text-align:center">
+        <h2 lang="en" class="text-center">For institutional usage</h3>
+        <h2 lang="bg" class="text-center">За институции</h3>
+        <p lang="en">If your institution is interested in using BgGPT internally and have questions on how to do so, please contact us using the link below.</p>
+        <p lang="bg">Ако вашата институция има желание да използва BgGPT, моля свържете се с нас използвайки линка долу.</p>
+        <a href="mailto:bggpt@insait.ai" style="display:block">
+          <button class="btn btn-primary btn-rounded btn-lg m-4 p-3" lang="bg">Свържете се с нас</button>
+          <button class="btn btn-primary btn-rounded btn-lg m-4 p-3" lang="en">Contact us</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
