@@ -2,47 +2,47 @@
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 100;
-	src: url("/assets/firago/FiraGO-Thin.woff2") format("woff2"), url("/assets/firago/FiraGO-Thin.woff") format("woff");
+	src: url("assets/firago/FiraGO-Thin.woff2") format("woff2"), url("/assets/firago/FiraGO-Thin.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 200;
-	src: url("/assets/firago/FiraGO-ExtraLight.woff2") format("woff2"), url("/assets/firago/FiraGO-ExtraLight.woff") format("woff");
+	src: url("assets/firago/FiraGO-ExtraLight.woff2") format("woff2"), url("/assets/firago/FiraGO-ExtraLight.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 300;
-	src: url("/assets/firago/FiraGO-Light.woff2") format("woff2"), url("/assets/firago/FiraGO-Light.woff") format("woff");
+	src: url("assets/firago/FiraGO-Light.woff2") format("woff2"), url("/assets/firago/FiraGO-Light.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 400;
-	src: url("/assets/firago/FiraGO-Regular.woff2") format("woff2"), url("/assets/firago/FiraGO-Regular.woff") format("woff");
+	src: url("assets/firago/FiraGO-Regular.woff2") format("woff2"), url("/assets/firago/FiraGO-Regular.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 500;
-	src: url("/assets/firago/FiraGO-Medium.woff2") format("woff2"), url("/assets/firago/FiraGO-Medium.woff") format("woff");
+	src: url("assets/firago/FiraGO-Medium.woff2") format("woff2"), url("/assets/firago/FiraGO-Medium.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 600;
-	src: url("/assets/firago/FiraGO-SemiBold.woff2") format("woff2"), url("/assets/firago/FiraGO-SemiBold.woff") format("woff");
+	src: url("assets/firago/FiraGO-SemiBold.woff2") format("woff2"), url("/assets/firago/FiraGO-SemiBold.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 700;
-	src: url("/assets/firago/FiraGO-Bold.woff2") format("woff2"), url("/assets/firago/FiraGO-Bold.woff") format("woff");
+	src: url("assets/firago/FiraGO-Bold.woff2") format("woff2"), url("/assets/firago/FiraGO-Bold.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 800;
-	src: url("/assets/firago/FiraGO-ExtraBold.woff2") format("woff2"), url("/assets/firago/FiraGO-ExtraBold.woff") format("woff");
+	src: url("assets/firago/FiraGO-ExtraBold.woff2") format("woff2"), url("/assets/firago/FiraGO-ExtraBold.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
 	font-weight: 900;
-	src: url("/assets/firago/FiraGO-Heavy.woff2") format("woff2"), url("/assets/firago/FiraGO-Heavy.woff") format("woff");
+	src: url("assets/firago/FiraGO-Heavy.woff2") format("woff2"), url("/assets/firago/FiraGO-Heavy.woff") format("woff");
 }
 @font-face {
 	font-family: "FiraGO";
