@@ -121,13 +121,17 @@
       </div>
     </nav>
     <div class="container">
-      <h1>Launching the first free and open Bulgarian LLM</h1>
+      <h1>The model behind the BgGPT chat app is published. </h1>
 
-      <p>At INSAIT we are thrilled to launch <a href="https://huggingface.co/INSAIT-Institute/BgGPT-7B-Instruct-v0.1">BgGPT-7B-Instruct-v0.1</a>, the first free and open Bulgarian Large Language Model in the BgGPT series (more models coming soon). BgGPT-7B-Instruct-v0.1 is now available for download at HuggingFace with the permissive and commercial-friendly Apache 2.0 licence. The model, which builds on Mistral-7B, already outperforms similarly sized models such as LLaMA2-7b and Mistral-7B on all Bulgarian language tasks. On many of these tasks, It also outperforms much larger models such as Mixtral-8x7B-Instruct-v0.1 (about 6.5 times larger), which has been shown to have similar capabilities as GPT-3.5.</p>
+      <p>At INSAIT we are delighted to release BgGPT-7B-Instruct-v0.2, the model used behind the BgGPT chat app: https://chat.bggpt.ai/. This model, part of the BgGPT series of models, is an improved version of the one we released a couple of weeks ago. BGGPT-7B-Instruct-v0.2 is still a 7B model, which is very fast for text generation and can run on most recent personal computers. It also comes with a permissive and commercial-friendly Apache 2.0 licence. The model is based on Mistral-7B, but was trained on significant amounts of data, and combined with other advances (to be published in research conferences), can outperform much larger models on Bulgarian tasks. The training costs of BGGPT-7B-Instruct-v0.2 come entirely from private funds and donations.  Please see the blog post for BGGPT-7B-Instruct-v0.1 we released earlier.</p>
+      <h2>BgGPT Success Story</h2>
+
+      <p>In only 2 weeks, BGGPT-7B-Instruct-v0.1 has already been adopted by various companies who remarked that with only few hours of work and low computation and financial resources for fine-tuning, it can reach the performance of GPT-4 on a particular task in Bulgarian.</p>
+      
       <h2>Evaluation & Benchmarks</h2>
 
-      <p>To systematically evaluate the Bulgarian performance of LLMs, including our model and any existing or future models, we translated a set of benchmarks to Bulgarian, including:</p>
-
+      <p>As with many other language models, we evaluate on a set of standard benchmarks translated to Bulgarian as well as on English benchmarks:</p>
+      
       <ul>
         <li><a href="#ref-winograde">Winogrande challenge [1]</a>: testing world understanding</li>
         <li><a href="#ref-hellaswag">Hellaswag [2]</a>: testing sentence completion</li>
@@ -139,14 +143,12 @@
         <li><a href="#ref-bgglue">bgGLUE [8]</a>: includes several Bulgarian language tasks</li>
       </ul>
 
-      <p>These benchmarks (except the last one which already exists) were built via both machine translation as well as our amazing team of translators. For evaluation, we <a href="https://github.com/insait-institute/lm-evaluation-harness-bg">forked</a> a version of the EuletherAI's evaluation harness. All benchmark data is made publicly available in our <a href="https://huggingface.co/INSAIT-Institute" >HF repository</a> to help others evaluate their own models.</p>
-
-      <p><strong>Note on evaluation:</strong> great care should be taken to not contaminate training or fine-tuning datasets by including the above benchmarks (generally known as overfitting, but a threat recently explored in detail here <a href="#ref-evading">[9]</a>), which can lead to misreported results.</p>
-
+      <p>These benchmarks test the logical reasoning, math, knowledge, language understanding and other skills of the model.</p>
+      
       <h2>Evaluation Results</h2>
 
-      <p>The following graphs show the performance of BgGPT-7B-Instruct-v0.1. It clearly outperforms same-sized models on Bulgarian benchmarks as well as on most other benchmarks. It also outperformed the much larger Mixtral-8x7B-Instruct-v0.1 on Bulgarian benchmarks. That said, the model does not excel at deep reasoning and knowledge skills, though this is somewhat expected as smaller models can learn less which is reflected in the knowledge-testing benchmarks. We expect this to improve in the BgGPT that will follow. Interestingly, even though the model is biased to Bulgarian, it does retain some English skills, making it a versatile tool for cross-lingual tasks including translation from English to Bulgarian. Here we include a gist of the benchmark results.</p>
-
+      <p>The following graphs show the performance of BgGPT-7B-Instruct-v0.2. It outperforms same-sized models on Bulgarian benchmarks, including improving upon the previous version of BgGPT-7B (BGGPT-7B-Instruct-v0.1). It also outperformed the much larger Mixtral-8x7B-Instruct-v0.1 on Bulgarian benchmarks. It also did not lose English skills and on some is comparable or better than the models of Google’s Gemma-7B, Mistral-7B, Llama-7B and others.</p>
+      
 			<object type="image/svg+xml" data="../../assets/img/Bulgarian%20language%20skills%20on%20a%20set%20of%20LLM benchmarks.svg"></object>
 
 			<object type="image/svg+xml" data="../../assets/img/Other%20benchmarks.svg"></object>
@@ -155,12 +157,8 @@
 
       <h2>Outlook</h2>
 
-      <p>While larger models will in general offer superior performance, we see that specialised, smaller 7B models can actually produce similar results to non-specialized much larger models, while enjoying much cheaper inference costs. Further, for many business applications, smaller models may suffice. Over the next weeks, we will release improved models, so stay tuned!</p>
-
-      <h2>Institutional use of BgGPT</h2>
-
-      <p>If you are an institution or a business organisation interested in using BgGPT internally and have questions on how to do so, please contact us at: <a href="mailto:bggpt@insait.ai">bggpt@insait.ai</a></p>
-
+      <p>Note that while the model is quite competitive to free open-source models, and especially for its size, it is still not on the level of paid commercial offerings. Yet, even at the current level, it can be useful for many applications.</p>
+      
       <h2>References</h2>
 
       <ol class="references">
