@@ -514,7 +514,9 @@ input.check-toggle-round-flat+label:after {
     flex-direction: column;
     justify-content: flex-start;
 }
-
+.side-by-side .announcement{
+    font-size: 135%;
+}
 .side-by-side button {
     margin-top: 10pt;
     color: #FFFFFF;
