@@ -514,7 +514,9 @@ input.check-toggle-round-flat+label:after {
     flex-direction: column;
     justify-content: flex-start;
 }
-
+.side-by-side .announcement{
+    font-size: 120%;
+}
 .side-by-side button {
     margin-top: 10pt;
     color: #FFFFFF;
@@ -716,7 +718,7 @@ img.hero {
 
 @media (max-width: 992px) {
     .side-by-side {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .side-by-side .demo {
