@@ -716,7 +716,7 @@ img.hero {
 
 @media (max-width: 992px) {
     .side-by-side {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .side-by-side .demo {
