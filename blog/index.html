@@ -125,75 +125,46 @@
       </div>
     </nav>
     <div class="container">
-      <h1 style="margin-bottom:0;" id="blog-post-2" lang="en">The model behind the BgGPT chat is now published</h1>
-      <h1 style="margin-bottom:0;" id="blog-post-2" lang="bg">Моделът зад приложението за чат BgGPT вече е достъпен</h1>
+      <h1 style="margin-bottom:0;" id="blog-post-2">The model behind the BgGPT chat is now published</h1>
      
       <p class="date" style="margin-bottom:2rem;fontr-size:110%;margin-left:5px;" lang="en">March 3, 2024</p>
-      <p class="date" style="margin-bottom:2rem;fontr-size:110%;margin-left:5px;" lang="bg">3 Mарт, 2024</p>
 
-      <p lang="en">At INSAIT we are delighted to release BgGPT-7B-Instruct-v0.2, the model used behind the BgGPT chat app: <a href="https://chat.bggpt.ai/">https://chat.bggpt.ai</a>. This model, part of the BgGPT series of models, is an improved version of the one we released <a href="#blog-post-1">a couple of weeks ago</a>. BGGPT-7B-Instruct-v0.2 is still a 7B model, which is very fast for text generation and can run on most recent personal computers. It also comes with a permissive and commercial-friendly Apache 2.0 licence. The model is based on Mistral-7B, but was trained on significant amounts of data, and combined with other advances (to be published in research conferences), can outperform much larger models on Bulgarian tasks. The training costs of BGGPT-7B-Instruct-v0.2 come entirely from private funds and donations.  Please see <a href="#blog-post-1">the blog post</a> for BGGPT-7B-Instruct-v0.1 we released earlier.</p>
-      <p lang="bg">В INSAIT сме развълнувани да представим BgGPT-7B-Instruct-v0.2, моделът зад приложението за чат BgGPT: <a href="https://chat.bggpt.ai/">https://chat.bggpt.ai</a>. Този модел, част от серията от модели BgGPT, представлява подобрена версия на онзи, който пуснахме <a href="#blog-post-1">преди няколко седмици</a>. BGGPT-7B-Instruct-v0.2 остава 7B модел, което му позволява да генерира текст бързо и го прави съвместим с повечето модерни персонални компютри. Той също така идва с лиценз с употреба Apache 2.0, който е свободен и подходящ за търговски цели. Моделът се основава на Mistral-7B, но е обучен върху големи количества данни и включва допълнителни подобрения (които предстои да бъдат представени на изследователски конференции), което му позволява да надмине много по-големи модели по отношение на задачите на българския език. Обучение на BGGPT-7B-Instruct-v0.2 е финансирано чрез частни средства и дарения. Моля, вижте <a href="#blog-post-1">нашия блог пост</a> за BGGPT-7B-Instruct-v0.1, който пуснахме по-рано.</p>
-
+      <p>At INSAIT we are delighted to release BgGPT-7B-Instruct-v0.2, the model used behind the BgGPT chat app: <a href="https://chat.bggpt.ai/">https://chat.bggpt.ai</a>. This model, part of the BgGPT series of models, is an improved version of the one we released <a href="#blog-post-1">a couple of weeks ago</a>. BGGPT-7B-Instruct-v0.2 is still a 7B model, which is very fast for text generation and can run on most recent personal computers. It also comes with a permissive and commercial-friendly Apache 2.0 licence. The model is based on Mistral-7B, but was trained on significant amounts of data, and combined with other advances (to be published in research conferences), can outperform much larger models on Bulgarian tasks. The training costs of BGGPT-7B-Instruct-v0.2 come entirely from private funds and donations.  Please see <a href="#blog-post-1">the blog post</a> for BGGPT-7B-Instruct-v0.1 we released earlier.</p>
       <h2 lang="en">BgGPT Success Story</h2>
-      <h2 lang="bg">Успех за BgGPT</h2>
 
-      <p lang="en">In only 2 weeks, BGGPT-7B-Instruct-v0.1 has already been adopted by various companies who remarked that with only few hours of work and low computation and financial resources for fine-tuning, it can reach the performance of GPT-4 on a particular task in Bulgarian.</p>
-      <p lang="bg">Само 2 седмици след пускането на BGGPT-7B-Instruct-v0.1, той вече се използва от различни компании, които отбелязват, че с минимална инвестиция на време и изчислителни ресурси, той може да постигне производителност, подобна на GPT-4 за конкретни задачи на български език.</p>
+      <p>In only 2 weeks, BGGPT-7B-Instruct-v0.1 has already been adopted by various companies who remarked that with only few hours of work and low computation and financial resources for fine-tuning, it can reach the performance of GPT-4 on a particular task in Bulgarian.</p>
       
-      <h2 lang="bg">Оценяване и Бенчмаркове</h2>
-      <h2 lang="en">Evaluation & Benchmarks</h2>
+      <h2>Evaluation & Benchmarks</h2>
 
-      <p lang="en">As with many other language models, we evaluate on a set of standard benchmarks translated to Bulgarian as well as on English benchmarks:</p>
-      <p lang="bg">Подобно на много други езикови модели, ние оценяваме работата на BgGPT-7B-Instruct-v0.2 върху набор от стандартни бенчмаркове преведени на български и английски език:</p>
+      <p>As with many other language models, we evaluate on a set of standard benchmarks translated to Bulgarian as well as on English benchmarks:</p>
       <ul>
-        <li lang="en"><a href="#ref-winograde-new">Winogrande challenge [1]</a>: testing world understanding</li>
-        <li lang="bg"><a href="#ref-winograde-new">Winogrande challenge [1]</a>: тества разбирането на модела за света</li>
-        <li lang="en"><a href="#ref-hellaswag-new">Hellaswag [2]</a>: testing sentence completion</li>
-        <li lang="bg"><a href="#ref-hellaswag-new">Hellaswag [2]</a>: тества модела да завършва изречения</li>
-        <li lang="en"><a href="#ref-arc-challenge-new">ARC Challenge [3]</a>: testing logical reasoning</li>
-        <li lang="bg"><a href="#ref-arc-challenge-new">ARC Challenge [3]</a>: тества логическото разсъждение на модела</li>
-        <li lang="en"><a href="#ref-mmlu-new">MMLU [4]</a>: including multiple choice questions from many disciplines</li>
-        <li lang="bg"><a href="#ref-mmlu-new">MMLU [4]</a>: включва въпроси с избираем отговор от много дисциплини</li>
-        <li lang="en"><a href="#ref-mathqa-new">MathQA [5]</a>: testing math reasoning</li>
-        <li lang="bg"><a href="#ref-mathqa-new">MathQA [5]</a>: тества математически разсъждения</li>
-        <li lang="en"><a href="#ref-gsm8k-new">GSM8K [6]</a>: solving multiple-choice questions in high-school mathematics</li>
-        <li lang="bg"><a href="#ref-gsm8k-new">GSM8K [6]</a>: включва въпроси с избираем отговор от гимназиалната математика</li>
-        <li lang="en"><a href="#ref-triviaqa-new">TriviaQA [7]</a>: testing trivia knowledge</li>
-        <li lang="bg"><a href="#ref-triviaqa-new">TriviaQA [7]</a>: тества дали моделът знае научнопопулярни факти</li>
-        <li lang="en"><a href="#ref-bgglue-new">bgGLUE [8]</a>: includes several Bulgarian language tasks</li>
-        <li lang="bg"><a href="#ref-bgglue-new">bgGLUE [8]</a>: включва различни бенчмаркове на български език</li>
+        <li><a href="#ref-winograde-new">Winogrande challenge [1]</a>: testing world understanding</li>
+        <li><a href="#ref-hellaswag-new">Hellaswag [2]</a>: testing sentence completion</li>
+        <li><a href="#ref-arc-challenge-new">ARC Challenge [3]</a>: testing logical reasoning</li>
+        <li><a href="#ref-mmlu-new">MMLU [4]</a>: including multiple choice questions from many disciplines</li>
+        <li><a href="#ref-mathqa-new">MathQA [5]</a>: testing math reasoning</li>
+        <li><a href="#ref-gsm8k-new">GSM8K [6]</a>: solving multiple-choice questions in high-school mathematics</li>
+        <li><a href="#ref-triviaqa-new">TriviaQA [7]</a>: testing trivia knowledge</li>
+        <li><a href="#ref-bgglue-new">bgGLUE [8]</a>: includes several Bulgarian language tasks</li>
       </ul>
 
-      <p lang="en">These benchmarks test the logical reasoning, math, knowledge, language understanding and other skills of the model.</p>
-      <p lang="bg">Тези бенчмаркове тестват способности като логическо разсъждение, математически умения, знания, разбиране на езика и други.</p>
+      <p>These benchmarks test the logical reasoning, math, knowledge, language understanding and other skills of the model.</p>
       
-      <h2 lang="en">Evaluation Results</h2>
-      <h2 lang="bg">Резултати от оценяването</h2>
+      <h2>Evaluation Results</h2>
 
-      <span lang="en">The following graphs show the performance of BgGPT-7B-Instruct-v0.2. It outperforms same-sized models on Bulgarian benchmarks, including improving upon the previous version of BgGPT-7B (BGGPT-7B-Instruct-v0.1). It also outperformed the much larger Mixtral-8x7B-Instruct-v0.1 on Bulgarian benchmarks. It also did not lose English skills and on some is comparable or better than the models of Google’s Gemma-7B, Mistral-7B, Llama-7B and others.</p>
+      The following graphs show the performance of BgGPT-7B-Instruct-v0.2. It outperforms same-sized models on Bulgarian benchmarks, including improving upon the previous version of BgGPT-7B (BGGPT-7B-Instruct-v0.1). It also outperformed the much larger Mixtral-8x7B-Instruct-v0.1 on Bulgarian benchmarks. It also did not lose English skills and on some is comparable or better than the models of Google’s Gemma-7B, Mistral-7B, Llama-7B and others.</p>
       
 			<object type="image/svg+xml" data="../assets/img/Bulgarian%20language%20skills%20on%20a%20set%20of%20LLM benchmarks v2.svg"></object>
 
 			<object type="image/svg+xml" data="../assets/img/Other%20benchmarks v2.svg"></object>
 
-			<object type="image/svg+xml" data="../assets/img/English%20language%20skills%20on%20a%20set%20of%20LLM benchmarks v2.svg"></object></span>
-
-      <span lang="bg">Графиките по-долу илюстрират ефективността на BgGPT-7B-Instruct-v0.2. Той надминава моделите със същия размер на българските бенчмаркове, включително подобрявайки предишната версия на BgGPT-7B (BGGPT-7B-Instruct-v0.1). Освен това той надминава много по-големия Mixtral-8x7B-Instruct-v0.1 на българските бенчмаркове. Въпреки това BgGPT-7B-Instruct-v0.2 има сходни резултати на английски език и в някои случаи превъзхожда модели от същият размер като Gemma-7B на Google, Mistral-7B и Llama-7B.</p>
+			<object type="image/svg+xml" data="../assets/img/English%20language%20skills%20on%20a%20set%20of%20LLM benchmarks v2.svg"></object>
       
-			<object type="image/svg+xml" data="../assets/img/Bulgarian%20language%20skills%20on%20a%20set%20of%20LLM benchmarks v2 bg.svg"></object>
+      <h2>Outlook</h2>
 
-			<object type="image/svg+xml" data="../assets/img/Other%20benchmarks v2 bg.svg"></object>
-
-			<object type="image/svg+xml" data="../assets/img/English%20language%20skills%20on%20a%20set%20of%20LLM benchmarks v2 bg.svg"></object></span>
-
-      <h2 lang="en">Outlook</h2>
-      <h2 lang="bg">Заключние</h2>
-
-      <p lang="en">Note that while the model is quite competitive to free open-source models, and especially for its size, it is still not on the level of paid commercial offerings. Yet, even at the current level, it can be useful for many applications.</p>
-      <p lang="bg">Въпреки че моделът демонстрира силна конкурентоспособност в сравнение с други безплатни отворени модели, особено като се има предвид неговият размер, той все още не достига нивото на комерсиалните приложения. Независимо от това, дори на сегашното си ниво, той има множество приложения.</p>
+      <p>Note that while the model is quite competitive to free open-source models, and especially for its size, it is still not on the level of paid commercial offerings. Yet, even at the current level, it can be useful for many applications.</p>
       
-      <h2 lang="en">References</h2>
-      <h2 lang="bg">Библиографска Справка</h2>
+      <h2>References</h2>
 
       <ol class="references">
         <li><a name="ref-winograde-new">Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. Winogrande: An adversarial winograd schema challenge at scale. Communications of the ACM, 64(9):99–106, 2021.</li>
