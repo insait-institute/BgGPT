@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Launching the first free and open Bulgarian LLM</title>
+    <link rel="icon" type="image/png" href="/assets/img/icon.144.png">
+    <link rel="canonical" href="https://bggpt.ai/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+      function handleLanguageChange(cb) {
+        if (cb.checked) {
+          document.body.classList.remove('lang-bg');
+          document.body.classList.add('lang-en');
+          localStorage.setItem('lang', 'en');
+        }
+        else {
+          document.body.classList.remove('lang-en');
+          document.body.classList.add('lang-bg');
+          localStorage.setItem('lang', 'bg');
+        }
+      }
+      function handleThemeChange() {
+        document.body.classList.toggle('dark')
+        if ($('body').hasClass('dark')) {
+          localStorage.setItem('color', 'dark');
+        }
+        else {
+          localStorage.setItem('color', 'light');
+        }
+      }
+      $(document).ready(function () {
+        console.log(localStorage.getItem('lang'))
+        if (localStorage.getItem('lang') === "en"){
+          document.body.classList.remove('lang-bg');
+          document.body.classList.add('lang-en');
+          $('.lang-switch input.check-toggle-round-flat').prop( "checked", true );
+        }
+        else {
+          document.body.classList.remove('lang-en');
+          document.body.classList.add('lang-bg');
+          $('.lang-switch input.check-toggle-round-flat').prop( "checked", false );
+        }
+        if (localStorage.getItem('color') === "dark"){
+          document.body.classList.add('dark');
+        }
+        else {
+          document.body.classList.remove('dark');
+        }
+      });
+    </script>
+
+    <meta name="description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta name="keywords" content="Bulgaria, LLM, BGGPT, BgGPT, BgGPT-7B-Instruct-v0.1, AI, Chatbot, Open-source">
+    <meta property="og:title" content="Launching the first free and open Bulgarian LLM" />
+    <meta property="og:description" content="Тhe first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta property="og:image" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta property="og:url" content="https://bggpt.ai/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm/"/>
+    <meta property="og:type" content="website" />
+    <meta name="twitter:description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
+    <meta name="twitter:image" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:image:src" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Launching the first free and open Bulgarian LLM" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="nav-bar-stipe"></div>
+      <div class="container">
+        <a class="navbar-brand navbar-text" href="/">
+          <img src="/assets/img/logo_white2.svg" class="d-inline-block align-top light-only" alt="Logo of the website">
+          <img src="/assets/img/logo_black2.svg" class="d-inline-block align-top dark-only" alt="Logo of the website">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse offset-sm-6 offset-lg-0" id="navbarNav">
+          <ul class="navbar-nav bg-custom ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://insait.ai/" lang="bg">За INSAIT</a>
+              <a class="nav-link" href="https://insait.ai/" lang="en">About INSAIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm" lang="en">Blog</a>
+              <a class="nav-link" href="/blog/2024-02-18-launching-the-first-free-and-open-bulgarian-llm" lang="bg">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://huggingface.co/INSAIT-Institute" lang="en">INSAIT models</a>
+              <a class="nav-link" href="https://huggingface.co/INSAIT-Institute" lang="bg">Модели на INSAIT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:bggpt@insait.ai" lang="en">Contact us</a>
+              <a class="nav-link" href="mailto:bggpt@insait.ai" lang="bg">Свържи се с нас</a>
+            </li>
+            <li class="nav-item toggle">
+              <button class="light-switch" onclick="handleThemeChange();">
+                <span class="on"><img src="/assets/img/sun.svg" width="20" height="20" alt="Icon for brightness"></span>
+                <span class="off"><img src="/assets/img/moon.svg" width="20" height="20" alt="Icon for brightness"></span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <div class="lang-switch">
+                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                  onclick="handleLanguageChange(this)">
+                <label for="language-toggle"></label>
+                <span class="on">БГ</span>
+                <span class="off">EN</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Launching the first free and open Bulgarian LLM</h1>
+
+      <p>At INSAIT we are thrilled to launch <a href="https://huggingface.co/INSAIT-Institute/BgGPT-7B-Instruct-v0.1">BgGPT-7B-Instruct-v0.1</a>, the first free and open Bulgarian Large Language Model in the BgGPT series (more models coming soon). BgGPT-7B-Instruct-v0.1 is now available for download at HuggingFace with the permissive and commercial-friendly Apache 2.0 licence. The model, which builds on Mistral-7B, already outperforms similarly sized models such as LLaMA2-7b and Mistral-7B on all Bulgarian language tasks. On many of these tasks, It also outperforms much larger models such as Mixtral-8x7B-Instruct-v0.1 (about 6.5 times larger), which has been shown to have similar capabilities as GPT-3.5.</p>
+      <h2>Evaluation & Benchmarks</h2>
+
+      <p>To systematically evaluate the Bulgarian performance of LLMs, including our model and any existing or future models, we translated a set of benchmarks to Bulgarian, including:</p>
+
+      <ul>
+        <li><a href="#ref-winograde">Winogrande challenge [1]</a>: testing world understanding</li>
+        <li><a href="#ref-hellaswag">Hellaswag [2]</a>: testing sentence completion</li>
+        <li><a href="#ref-arc-challenge">ARC Challenge [3]</a>: testing logical reasoning</li>
+        <li><a href="#ref-mmlu">MMLU [4]</a>: including multiple choice questions from many disciplines</li>
+        <li><a href="#ref-mathqa">MathQA [5]</a>: testing math reasoning</li>
+        <li><a href="#ref-gsm8k">GSM8K [6]</a>: solving multiple-choice questions in high-school mathematics</li>
+        <li><a href="#ref-triviaqa">TriviaQA [7]</a>: testing trivia knowledge</li>
+        <li><a href="#ref-bgglue">bgGLUE [8]</a>: includes several Bulgarian language tasks</li>
+      </ul>
+
+      <p>These benchmarks (except the last one which already exists) were built via both machine translation as well as our amazing team of translators. For evaluation, we <a href="https://github.com/insait-institute/lm-evaluation-harness-bg">forked</a> a version of the EuletherAI's evaluation harness. All benchmark data is made publicly available in our <a href="https://huggingface.co/INSAIT-Institute" >HF repository</a> to help others evaluate their own models.</p>
+
+      <p><strong>Note on evaluation:</strong> great care should be taken to not contaminate training or fine-tuning datasets by including the above benchmarks (generally known as overfitting, but a threat recently explored in detail here <a href="#ref-evading">[9]</a>), which can lead to misreported results.</p>
+
+      <h2>Evaluation Results</h2>
+
+      <p>The following graphs show the performance of BgGPT-7B-Instruct-v0.1. It clearly outperforms same-sized models on Bulgarian benchmarks as well as on most other benchmarks. It also outperformed the much larger Mixtral-8x7B-Instruct-v0.1 on Bulgarian benchmarks. That said, the model does not excel at deep reasoning and knowledge skills, though this is somewhat expected as smaller models can learn less which is reflected in the knowledge-testing benchmarks. We expect this to improve in the BgGPT that will follow. Interestingly, even though the model is biased to Bulgarian, it does retain some English skills, making it a versatile tool for cross-lingual tasks including translation from English to Bulgarian. Here we include a gist of the benchmark results.</p>
+
+			<object type="image/svg+xml" data="/assets/img/Bulgarian%20language%20skills%20on%20a%20set%20of%20LLM benchmarks.svg"></object>
+
+			<object type="image/svg+xml" data="/assets/img/Other%20benchmarks.svg"></object>
+
+			<object type="image/svg+xml" data="/assets/img/English%20language%20skills%20on%20a%20set%20of%20LLM benchmarks.svg"></object>
+
+      <h2>Outlook</h2>
+
+      <p>While larger models will in general offer superior performance, we see that specialised, smaller 7B models can actually produce similar results to non-specialized much larger models, while enjoying much cheaper inference costs. Further, for many business applications, smaller models may suffice. Over the next weeks, we will release improved models, so stay tuned!</p>
+
+      <h2>Institutional use of BgGPT</h2>
+
+      <p>If you are an institution or a business organisation interested in using BgGPT internally and have questions on how to do so, please contact us at: <a href="mailto:bggpt@insait.ai">bggpt@insait.ai</a></p>
+
+      <h2>References</h2>
+
+      <ol class="references">
+        <li><a name="ref-winograde">Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. Winogrande: An adversarial winograd schema challenge at scale. Communications of the ACM, 64(9):99–106, 2021.</li>
+        <li><a name="ref-hellaswag">Rowan Zellers, Ari Holtzman, Yonatan Bisk, Ali Farhadi, and Yejin Choi. Hellaswag: Can a machine really finish your sentence? <a href="https://arxiv.org/abs/1905.07830">https://arxiv.org/abs/1905.07830</a></li>
+        <li><a name="ref-arc-challenge">Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa Schoenick, and Oyvind Tafjord. Think you have solved question answering? try arc, the ai2 reasoning challenge. <a href="https://arxiv.org/abs/1803.05457">https://arxiv.org/abs/1803.05457</a></li>
+        <li><a name="ref-mmlu">Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. Measuring massive multitask language understanding. <a href="https://arxiv.org/abs/2009.03300">https://arxiv.org/abs/2009.03300</a></li>
+        <li><a name="ref-mathqa">Aida Amini, Saadia Gabriel, Shanchuan Lin, Rik Koncel-Kedziorski, Yejin Choi, and Hannaneh Hajishirzi. MathQA: Towards interpretable math word problem solving with operation-based formalisms <a href="https://arxiv.org/abs/1905.13319">https://arxiv.org/abs/1905.13319</a></li>
+        <li><a name="ref-gsm8k">Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, et al. Training verifiers to solve math word problems. <a href="https://arxiv.org/abs/2110.14168">https://arxiv.org/abs/2110.14168</a></li>
+        <li><a name="ref-triviaqa">Mandar Joshi, Eunsol Choi, Daniel S Weld, and Luke Zettlemoyer. Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension. <a href="https://arxiv.org/abs/1705.03551">https://arxiv.org/abs/1705.03551</a></li>
+        <li><a name="ref-bgglue">Momchil Hardalov, Pepa Atanasova, Todor Mihaylov, Galia Angelova, Kiril Simov, Petya Osenova, Veselin Stoyanov, Ivan Koychev, Preslav Nakov, and Dragomir Radev. bgGLUE: A Bulgarian general language understanding evaluation benchmark. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8733–8759 <a href="https://bgglue.github.io/">https://bgglue.github.io/</a></li>
+        <li><a name="ref-evading">Evading Data Contamination Detection for Language Models is (too) Easy, Dekonick et. al. <a href="https://arxiv.org/abs/2402.02823">https://arxiv.org/abs/2402.02823</a></li>
+      </ol>
+    </div>
+  </body>
+</html>
