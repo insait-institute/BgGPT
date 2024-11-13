@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>BgGPT</title>
     <link rel="icon" type="image/png" href="/assets/img/icon.144.png">
-    <link rel="canonical" href="https://bggpt.ai/">
+    <link rel="canonical" href="https://models.bggpt.ai/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -13,6 +13,37 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <style>
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 80px;
+      }
+      
+      .countdown-box span:first-child {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      
+      .countdown-box .label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+      
+      body.lang-en .countdown-box .label[lang="bg"],
+      body.lang-bg .countdown-box .label[lang="en"] {
+        display: none;
+      }
+    </style>
 
     <script>
       function handleLanguageChange(cb) {
@@ -55,18 +86,52 @@
           document.body.classList.remove('dark');
         }
       });
+
+      // adding countdown timer
+      function updateCountdown() {
+        const targetDate = new Date('2024-11-23T10:00:00').getTime(); // Set your target date here
+        
+        function update() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+          
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+          document.getElementById('days').textContent = days.toString().padStart(2, '0');
+          document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+          document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+          document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+          
+          if (distance < 0) {
+            clearInterval(interval);
+            document.getElementById('countdown').innerHTML = '<p lang="en">BgGPT is now available!</p><p lang="bg">BgGPT вече е достъпен!</p>';
+          }
+        }
+        
+        update();
+        const interval = setInterval(update, 1000);
+      }
+      
+      // Add this to your document.ready function
+      $(document).ready(function() {
+        // ... your existing ready code ...
+        updateCountdown();
+      });
     </script>
 
     <meta name="description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
     <meta name="keywords" content="Bulgaria, LLM, BGGPT, BgGPT, AI, Chatbot, Open-source">
     <meta property="og:title" content="BgGPT" />
     <meta property="og:description" content="Тhe first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
-    <meta property="og:image" content="https://bggpt.ai/assets/img/social_en.png" />
-    <meta property="og:url" content="https://bggpt.ai/"/>
+    <meta property="og:image" content="https://models.bggpt.ai/assets/img/social_en.png" />
+    <meta property="og:url" content="https://models.bggpt.ai/"/>
     <meta property="og:type" content="website" />
     <meta name="twitter:description" content="The first generative state-of-the-art AI created for the Bulgarian government, users, public and private organizations." />
-    <meta name="twitter:image" content="https://bggpt.ai/assets/img/social_en.png" />
-    <meta name="twitter:image:src" content="https://bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:image" content="https://models.bggpt.ai/assets/img/social_en.png" />
+    <meta name="twitter:image:src" content="https://models.bggpt.ai/assets/img/social_en.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="BgGPT" />
   </head>
@@ -89,10 +154,10 @@
               <a class="nav-link" href="https://insait.ai/" lang="bg">За INSAIT</a>
               <a class="nav-link" href="https://insait.ai/" lang="en">About INSAIT</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="https://chat.bggpt.ai/" lang="bg">BgGPT чат</a>
               <a class="nav-link" href="https://chat.bggpt.ai/" lang="en">BgGPT chat</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="/blog/" lang="en">Blog</a>
               <a class="nav-link" href="/blog/" lang="bg">Блог</a>
@@ -130,13 +195,39 @@
           <div class="container demo">
             <div class="row">
               <p lang="en" class="announcement">
-                <strong>BgGPT chat is now available free of charge at:</strong>
+                <!-- <strong>BgGPT chat is now available free of charge at:</strong> -->
+                <strong>BgGPT chat will be available after:</strong>
               </p>
               <p lang="bg" class="announcement">
-                <strong>BgGPT чат е свободно достъпен на:</strong>
+                <!-- <strong>BgGPT чат е свободно достъпен на:</strong> -->
+                <strong>BgGPT чат ще бъде свободно достъпен след:</strong>
               </p>
               <div class="offset-sm-1 col-sm-10 offset-lg-0 col-lg-12 mt-3 mb-5">
-                <a href="https://chat.bggpt.ai/"><img src="/assets/img/chat_available.png" alt="Announcement of chat application" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display:block"></a>
+                <!-- <a href="https://chat.bggpt.ai/"><img src="/assets/img/chat_available.png" alt="Announcement of chat application" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display:block"></a> -->
+                <div class="offset-sm-1 col-sm-10 offset-lg-0 col-lg-12 mt-3 mb-5">
+                  <div id="countdown" class="countdown-container">
+                    <div class="countdown-box">
+                      <span id="days">00</span>
+                      <span class="label" lang="en">Days</span>
+                      <span class="label" lang="bg">Дни</span>
+                    </div>
+                    <div class="countdown-box">
+                      <span id="hours">00</span>
+                      <span class="label" lang="en">Hours</span>
+                      <span class="label" lang="bg">Часа</span>
+                    </div>
+                    <div class="countdown-box">
+                      <span id="minutes">00</span>
+                      <span class="label" lang="en">Minutes</span>
+                      <span class="label" lang="bg">Минути</span>
+                    </div>
+                    <div class="countdown-box">
+                      <span id="seconds">00</span>
+                      <span class="label" lang="en">Seconds</span>
+                      <span class="label" lang="bg">Секунди</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
