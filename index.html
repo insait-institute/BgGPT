@@ -37,20 +37,48 @@
       .countdown-box .label {
         font-size: 0.9rem;
         text-transform: uppercase;
+        margin-top: 8px;
       }
 
-      body.dark .countdown-box span {
+      body.dark .countdown-box span:first-child {
         color: white;
       }
 
-      .countdown-box .label {
-        font-size: 0.9rem;
-        text-transform: uppercase;
+      body.dark .countdown-box .label {
+        color: white;
       }
 
       body.lang-en .countdown-box .label[lang="bg"],
       body.lang-bg .countdown-box .label[lang="en"] {
         display: none;
+      }
+
+      .announcement strong {
+        font-size: 1.5rem;  /* Added new style for announcement text */
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 767px) {
+        .announcement {
+          margin-top: -20px;  /* Move text up on mobile */
+        }
+
+        .announcement strong {
+          font-size: 1.3rem;  /* Slightly smaller font on mobile for better fit */
+          margin-bottom: 0.5rem;  /* Reduce bottom margin on mobile */
+        }
+      }
+
+      @media (min-width: 768px) {
+        .countdown-box span:first-child {
+          font-size: 4rem;
+        }
+
+        .announcement strong {
+          font-size: 2rem;
+        }
+
       }
     </style>
 
@@ -201,11 +229,11 @@
             <div class="row">
               <p lang="en" class="announcement">
                 <!-- <strong>BgGPT chat is now available free of charge at:</strong> -->
-                <strong>The new version of BgGPT will be available after:</strong>
+                <strong>The new BgGPT chat application will be available in</strong>
               </p>
               <p lang="bg" class="announcement">
                 <!-- <strong>BgGPT чат е свободно достъпен на:</strong> -->
-                <strong>Новата версия на BgGPT ще бъде достъпна след:</strong>
+                <strong>Новият чат с BgGPT ще бъде достъпен след</strong>
               </p>
               <div class="offset-sm-1 col-sm-10 offset-lg-0 col-lg-12 mt-3 mb-5">
                 <!-- <a href="https://chat.bggpt.ai/"><img src="/assets/img/chat_available.png" alt="Announcement of chat application" style="max-width: 100%; max-height: 300px; width: auto; height: auto; display:block"></a> -->
