@@ -21,42 +21,36 @@
         gap: 20px;
         margin: 20px 0;
       }
-      
+
       .countdown-box {
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-width: 120px;
+        min-width: 60px;
       }
-      
+
       .countdown-box span:first-child {
-        font-size: 4rem;
+        font-size: 2.5rem;
         font-weight: bold;
       }
-      
+
       .countdown-box .label {
         font-size: 0.9rem;
         text-transform: uppercase;
-        margin-top: 8px;
       }
 
-      body.dark .countdown-box span:first-child {
+      body.dark .countdown-box span {
         color: white;
       }
 
-      body.dark .countdown-box .label {
-        color: white;
+      .countdown-box .label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
       }
-      
+
       body.lang-en .countdown-box .label[lang="bg"],
       body.lang-bg .countdown-box .label[lang="en"] {
         display: none;
-      }
-
-      .announcement strong {
-        font-size: 2rem;  /* Added new style for announcement text */
-        display: block;
-        margin-bottom: 1rem;
       }
     </style>
 
@@ -105,31 +99,31 @@
       // adding countdown timer
       function updateCountdown() {
         const targetDate = new Date('2024-11-23T10:00:00').getTime(); // Set your target date here
-        
+
         function update() {
           const now = new Date().getTime();
           const distance = targetDate - now;
-          
+
           const days = Math.floor(distance / (1000 * 60 * 60 * 24));
           const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          
+
           document.getElementById('days').textContent = days.toString().padStart(2, '0');
           document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
           document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
           document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-          
+
           if (distance < 0) {
             clearInterval(interval);
             document.getElementById('countdown').innerHTML = '<p lang="en">BgGPT is now available!</p><p lang="bg">BgGPT вече е достъпен!</p>';
           }
         }
-        
+
         update();
         const interval = setInterval(update, 1000);
       }
-      
+
       // Add this to your document.ready function
       $(document).ready(function() {
         // ... your existing ready code ...
