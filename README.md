@@ -46,6 +46,6 @@ BgGPT е усъвършенстван езиков модел, адаптира�
 Ако този проект ви е полезен, моля, разгледайте възможностите за подкрепа и споделяне на ресурсите ни. Вашата подкрепа ни помага да продължим да развиваме и подобряваме BgGPT.
 
 ---
-https://github.com/insait-institute/BgGPT/blob/master/LICENSE
+
 [![GitHub](https://img.shields.io/github/license/insait-institute/BgGPT)](https://github.com/insait-institute/BgGPT)
 [![License](https://img.shields.io/github/license/insait-institute/BgGPT)](https://github.com/insait-institute/BgGPT/blob/master/LICENSE)
