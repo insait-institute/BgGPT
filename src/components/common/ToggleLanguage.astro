@@ -1,0 +1,81 @@
+---
+import { clientTranslations } from '~/i18n/translations';
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className = 'text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center' } = Astro.props;
+
+const translationsJson = JSON.stringify(clientTranslations);
+---
+
+<button type="button" class={className} aria-label="Toggle language" data-aw-toggle-language>
+  <span class="font-semibold text-xs uppercase tracking-wide" data-lang-label>BG</span>
+</button>
+
+<script is:inline define:vars={{ translationsJson }}>
+  (function() {
+    var STORAGE_KEY = 'language';
+    var translations = JSON.parse(translationsJson);
+
+    function getLang() {
+      return localStorage.getItem(STORAGE_KEY) || 'bg';
+    }
+
+    function setLang(lang) {
+      localStorage.setItem(STORAGE_KEY, lang);
+      applyLang(lang);
+    }
+
+    function applyLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+
+      // Update toggle button labels
+      document.querySelectorAll('[data-lang-label]').forEach(function(el) {
+        el.textContent = lang.toUpperCase();
+      });
+
+      // Show/hide language blocks
+      document.querySelectorAll('[data-lang-en]').forEach(function(el) {
+        el.style.display = lang === 'en' ? '' : 'none';
+      });
+      document.querySelectorAll('[data-lang-bg]').forEach(function(el) {
+        el.style.display = lang === 'bg' ? '' : 'none';
+      });
+
+      // Swap text for elements with data-i18n keys
+      var langMap = translations[lang];
+      if (langMap) {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (langMap[key]) {
+            el.textContent = langMap[key];
+          }
+        });
+      }
+    }
+
+    // Apply once DOM is fully parsed (so all data-lang-* elements exist)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        applyLang(getLang());
+      });
+    } else {
+      applyLang(getLang());
+    }
+
+    // Re-apply after Astro page transitions
+    document.addEventListener('astro:after-swap', function() {
+      applyLang(getLang());
+    });
+
+    // Attach click handler (delegated)
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-aw-toggle-language]');
+      if (!btn) return;
+      var current = getLang();
+      setLang(current === 'en' ? 'bg' : 'en');
+    });
+  })();
+</script>
