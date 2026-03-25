@@ -1,8 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { getHomePermalink } from '~/utils/permalinks';
+import { getHomePermalink, getAsset } from '~/utils/permalinks';
 import byBright from '~/assets/images/logo-by-bright.svg';
 import byDark from '~/assets/images/logo-by-dark.svg';
+
+const huggingFaceIconUrl = getAsset('/images/huggingface.svg');
 
 interface Link {
   text?: string;
@@ -50,7 +52,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                   href={href}
                 >
                   {icon === 'custom:huggingface'
-                    ? <img src="/images/huggingface.svg" alt="HuggingFace" class="w-5 h-5" />
+                    ? <img src={huggingFaceIconUrl} alt="HuggingFace" class="w-5 h-5" />
                     : icon && <Icon name={icon} class="w-5 h-5" />
                   }
                   <Fragment set:html={text} />
