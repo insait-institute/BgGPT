@@ -1,7 +1,7 @@
 site:
   name: BgGPT
-  site: 'https://bggpt.ai'
-  base: '/'
+  site: 'https://insait-institute.github.io'
+  base: '/BgGPT'
   trailingSlash: false
 
 # Default SEO metadata
